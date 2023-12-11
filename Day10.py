@@ -109,6 +109,7 @@ border_filter = [b for b in border if maze[b[0]][b[1]] not in ['-','|']]
 polygon = Polygon(border_filter)
 for i in range(NI):
     for j in range(NJ):
+        if (i,j) in border: continue
         inside_tile += polygon.contains(Point(i,j))
         # print('#' if polygon.contains(Point(i,j)) else '.',end=' ')
     # print()
